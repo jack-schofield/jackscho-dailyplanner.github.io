@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Work Day Scheduler</title>
+
+    <script>
+
+      function saveEdits() {
+        var editElem = document.getElementById("edit");
+        var userVersion = editElem.innerHTML;
+        localStorage.userEdits = userVersion;
+      }
+
+      function checkEdits() {
+        if(localStorage.userEdits!=null)
+        document.getElementById("edit").innerHTML = localStorage.userEdits;
+      }
+
+    </script>
+
+  </head>
+
+  <body onload="checkEdits()">
+
+    <header class="jumbotron">
+      <h1 class="display-3">Daily Planner</h1>
+      <br>
+      <p id="currentDay" class="lead"></p>
+    </header>
+    <div class="container">
+      <!-- Timeblocks go here -->
+    </div>
+
+    <table class="table table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Time</th>
+          <th scope="col">Details</th>
+          <th scope="col">Save</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <th>9:00 AM</th>
+          <td>
+            <div id="edit" contenteditable="true">
+            </div>
+          </td>
+          <td>
+            <div>
+              <input type="button" value="&#10003" onclick="saveEdits()"/>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <th>10:00 AM</th>
+          <td>
+            <div id="edit" contenteditable="true">
+            </div>
+          </td>
+          <td>
+            <div>
+              <input type="button" value="&#10003" onclick="saveEdits()"/>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <th>11:00 AM</th>
+          <td>
+            <div id="edit" contenteditable="true">
+            </div>
+          </td>
+          <td>
+            <div>
+              <input type="button" value="&#10003" onclick="saveEdits()"/>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <th>12:00 AM</th>
+          <td>
+            <div id="edit" contenteditable="true">
+            </div>
+          </td>
+          <td>
+            <div>
+              <input type="button" value="&#10003" onclick="saveEdits()"/>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <th>1:00 PM</th>
+          <td>
+            <div id="edit" contenteditable="true">  
+            </div>
+          </td>
+          <td>
+            <div>
+              <input type="button" value="&#10003" onclick="saveEdits()"/>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <th>2:00 PM</th>
+          <td>
+            <div id="edit" contenteditable="true">               
+            </div>
+          </td>
+          <td>
+            <div>
+              <input type="button" value="&#10003" onclick="saveEdits()"/>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <th>3:00 PM</th>
+          <td>
+            <div id="edit" contenteditable="true">                 
+            </div>
+          </td>
+          <td>
+            <div>
+              <input type="button" value="&#10003" onclick="saveEdits()"/>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <th>4:00 PM</th>
+          <td>
+            <div id="edit" contenteditable="true">    
+            </div>
+          </td>
+          <td>
+            <div>
+              <input type="button" value="&#10003" onclick="saveEdits()"/>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <th>5:00 PM</th>
+          <td>
+            <div id="edit" contenteditable="true">  
+            </div>
+          </td>
+          <td>
+            <div>
+              <input type="button" value="&#10003" onclick="saveEdits()"/>
+            </div>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    
+  </body>
+
+  <script type="text/javascript">
+
+    document.getElementById("currentDay").innerHTML = moment().format('MMMM Do YYYY');
+
+
+  </script>
+</html>
